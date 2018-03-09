@@ -1,0 +1,89 @@
+   /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+.sidenav {
+    background-color: #f1f1f1;
+    height: auto;
+}
+        
+    /* On small screens, set height to 'auto' for the grid */
+@media screen and (max-width: 767px) {
+    .row.content {height: auto;} 
+}
+
+
+
+
+@media (max-width: 500px) { 
+    .img-app {
+	height:5vh;
+	width :5vw;
+    }
+    .font-app{
+	font-size:0.8em;
+	color: white;
+	font-weight: bold
+    }
+}
+
+
+@media (min-width: 501px) and (max-width: 767px) { 
+    .img-app {
+	height:10vh;
+	width :10vw;
+    }
+    .font-app{
+	font-size:1em;
+	color: white;
+	font-weight: bold
+    }	
+}
+
+
+
+@media (min-width: 768px) and (max-width: 991px) { 
+    .img-app {
+	height:15vh;
+	width :15vw;
+    }
+    .font-app{
+	font-size:1.5em;
+	color: white;
+	font-weight: bold
+    }
+}
+
+
+@media (min-width: 992px) { 
+    .img-app {
+	height:18vh;
+	width :18vw;
+    }
+    .font-app{
+	font-size:1.8em;
+	color: white;
+	font-weight: bold
+    }
+
+}
+ 
+
+
+.thumbnail {
+    position: relative;    
+}
+
+.caption {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height:50%; 
+    color:white;
+    background-color:purple;
+    opacity:0.9;  
+}
+
+
+

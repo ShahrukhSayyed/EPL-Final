@@ -1,0 +1,96 @@
+    <div class="row content">
+      <div class="col-xs-12 col-sm-9 col-md-9" > <!-- View for loading all matches -->
+        <div class="well">
+          <div class="row">
+            <form>
+              <div class="form-group">
+                <div class="col-xs-4 col-sm-4 col-md-3" >
+                  <label for="filterByClub">Filter by Club :</label>
+                  <select class="form-control" name="selClub" ng-model="teamName" data-ng-options="team for team in matchCtrl.teams">
+                    <option value>All Clubs</option>
+                  </select>
+                </div>
+
+                <div class="col-xs-4 col-sm-4 col-md-3" >
+                  <label for="filterByClub">Filter by Season :</label>
+                  <select class="form-control" name="selClub" ng-model="year" ng-change="matchCtrl.changedValue(year)">Filter by Season :
+                    <option value="EPL2016/17">2016/17</option>
+                    <option value="EPL2015/16">2015/16</option>
+                  </select>
+                </div>
+
+                <div class="col-xs-4 col-sm-4 col-md-3" >
+                  <label for="filterByClub">Team Code :</label>
+		  <input type="text" class="form-control" id="teamCode" ng-model="teamCode" maxlength="3" placeholder="Only 3 Chars">
+                </div>
+
+                
+
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        <div class="well" ng-repeat="(key, value) in matchCtrl.allMatches | filter : teamCode | filter : teamCode | groupBy: 'date'">
+          <div >            
+            <ul class="nav nav-pills nav-stacked" >
+              <div class="row">
+                <div class="hidden-xs col-sm-3 col-sm-push-8 col-md-3 col-md-push-8">
+                  <img src="images/other/Premier-League-Centred.png" alt="Premier League" class="img-responsive" height="120vh" width="300vw"></img>
+                </div>
+
+                <div class=" col-sm-8 col-sm-pull-3 col-md-8 col-md-pull-3"> 
+                  <h4> {{key | date:"EEE MMMM dd, yyyy"}}</h4>
+                </div>
+              </div>
+
+              <li ng-repeat="match in value ">         
+                <a class="list-group-item" ng-href="#/singleMatch/{{key}}/{{match.team1.code}}/{{match.team2.code}}" >
+                
+                  <div class="row text-center">       
+                    <div class="col-sm-12 col-md-2"> 
+                      <strong class="">{{match.team1.name}}</strong> 
+                    </div>
+                    <div class="col-sm-12 col-md-2"> 
+                      <img ng-src="images/teams/{{match.team1.code}}.svg" alt="Team1 code " height="40vh" width="40vw" ></img>
+                    </div>
+                    <div class="col-sm-6 col-sm-offset-3 col-md-3 col-md-offset-0"> 
+                      <strong  style="background-color: purple;color: white;"> &nbsp; {{match.score1}} - {{match.score2}} &nbsp; </strong>
+                    </div>
+                    <div class="col-sm-12 col-md-2"> 
+                      <img ng-src="images/teams/{{match.team2.code}}.svg" alt="Team2 code" height="40vh" width="40vw"></img>
+                    </div>
+                    <div class="col-sm-12 col-md-2"> 
+                      <strong class="">{{match.team2.name}}</strong>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>      
+        </div>
+
+        <div class="row text-center" >
+          <div class="col-sm-12 col-md-12">
+            <div class="well">
+              <a class= "" id="loadMore" ng-show="matchCtrl.allMatches.length">Load Round No : {{matchCtrl.limitIndex+2}}</a>
+            </div>
+          </div>          
+        </div>
+
+
+      </div> <!-- col-sm-9 i.e Main div end -->
+      <div class="hidden-xs col-sm-3 col-md-3"> <!-- col-sm-3  -->
+        <div class="well">
+          <div >
+            <h4> Fabulus Season</h4>
+            <div class="card">
+              <img class="card-img-top img-responsive" src="images/other/card2.png" alt="Card image cap" height="400vh" width="300vw"> </img>
+              <div class="card-body">
+                <p class="card-text">It takes a tremendous amount of skill to be a football player. And some of these guys have enough skills to do other sports. Soccer could be one. Basketball could be another. Things where you need incredible hand-eye coordination are always options. I think a football player would be able to adapt to a lot of sports.</p>
+              </div>
+            </div>          
+          </div>
+        </div> 
+      </div><!-- col-sm-3 END -->
+    </div>

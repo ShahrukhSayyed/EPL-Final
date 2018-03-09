@@ -1,0 +1,84 @@
+    <div class="row " >
+      <div class="col-sm-3 col-md-3 sidenav text-center"  id="navbarDiv">
+        <div ng-init="matchCtrl.loadLatestMatches()">
+          <h4> Last week - {{matchCtrl.seasonName}}</h4>
+          <img src="images/other/Premier-League-Centred.png" alt="Premier League" width="120vw"></img>
+          
+          <ul class="nav nav-pills nav-stacked" >
+            <li ng-repeat="match in matchCtrl.latestMatches" >         
+              <a class="list-group-item" ng-href="#/singleMatch/{{match.date}}/{{match.team1.code}}/{{match.team2.code}}" >
+                <div class="row">
+                  <div class="col-sm-12 col-md-12"> 
+                    <h6>{{match.date | date:"EEE MMMM dd, yyyy"}}</h6>
+                  </div>
+                </div>
+                        
+                <div class="row">       
+                  <div class="col-sm-12 col-md-2"> 
+                    <strong class="">{{match.team1.code}}</strong> 
+                  </div>
+                  <div class="col-sm-12 col-md-2"> 
+                    <img ng-src="images/teams/{{match.team1.code}}.svg" alt="Team Code 1" height="30vh" width="30vw" > </img>
+                  </div>
+                  <div class="col-sm-6 col-sm-offset-3 col-md-3 col-md-offset-0" >
+
+                    <strong style="background-color: purple;color: white;"> {{match.score1}} - {{match.score2}} </strong>
+                  </div>
+                  <div class="col-sm-12 col-md-2"> 
+                    <img ng-src="images/teams/{{match.team2.code}}.svg" alt="Team Code 2" height="30vh" width="30vw" > </img>
+                  </div>
+                  <div class="col-sm-12 col-md-2"> 
+                    <strong class="">{{match.team2.code}}</strong>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>             
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-12 col-md-12">
+              <a class= "btn btn-info" href="#/loadAll" id="getAllMatches">View All matches</a>
+          </div>
+	          
+        </div> <!-- row end -->
+	<br>
+      </div><!-- col-sm-3 end -->  
+
+
+      <div class="col-sm-7 hidden-xs col-sm-offset-1 "> <!-- col-sm-9  -->
+        <div class="row">
+          <div class="well" style="background-color: #C0B283">
+            <div >
+              <h4> Classic Match</h4>
+          
+
+              <div class="card">
+                <img class="card-img-top img-responsive" src="images/other/news1.jpg" alt="Card image cap" height="400vh" width="300vw"> </img>
+                <div class="card-body">
+                  <p class="card-text"> <strong >Money is not a motivating factor. Money doesn't thrill me or make me play better because there are benefits to being wealthy. I'm just happy with a ball at my feet. My motivation comes from playing the game I love. If I wasn't paid to be a professional footballer I would willingly play for nothing.
+                  </strong >
+                  </p>
+                </div>
+              </div>          
+            </div>
+          </div> 
+        </div>  
+
+        <div class="row">
+          <div class="well" style="background-color: #C0B283">
+            <div >
+              <h4> What a Great Match</h4>
+          
+
+              <div class="card">
+                <img class="card-img-top img-responsive" src="images/other/card.jpg" alt="Card image cap" height="400vh" width="300vw"> </img>
+                <div class="card-body">
+                  <p class="card-text"> <strong> “On a team, it’s not the strength of the individual players, but it is the strength of the unit and how they all function together.” -- Bill Belichick, Head Coach New England Patriots (2000-Present), New York Jets (1999), Cleveland Browns (1991-95) </strong> </p>
+                </div>
+              </div>          
+            </div>
+          </div> 
+        </div>  
+      </div><!-- col-sm-7 END -->
+    </div> 
